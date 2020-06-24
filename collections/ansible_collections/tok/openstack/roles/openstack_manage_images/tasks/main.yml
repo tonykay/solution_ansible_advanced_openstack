@@ -1,0 +1,24 @@
+---
+
+- when: openstack_images is not defined
+  name: openstack_images is not defined
+  debug:
+    msg: openstack_images is not defined
+
+- when: openstack_images is defined
+  name: Manage openstack images
+  os_image:
+    cloud:              "{{ __image.cloud            | default('openstack') }}"
+    state:              "{{ __image.state }}"
+    name:               "{{ __image.name }}"
+    container_format:   "{{ __image.container_format | default(omit) }}"
+    disk_format:        "{{ __image.disk_format      | default(omit) }}"
+    filename:           "{{ __image.filename }}"
+  loop: "{{ openstack_images }}"
+  loop_control:
+    loop_var: __image
+
+  tags:
+    - openstack-images
+
+...    

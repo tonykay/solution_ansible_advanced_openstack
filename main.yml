@@ -1,6 +1,6 @@
 ---
 - name: Start working with OpenStack
-  hosts: localhost
+  hosts: control
   gather_facts: false
   collections:
     - tok.openstack
@@ -8,5 +8,12 @@
   tasks:
 
   - name: Call the test role
-    import_role:
-      name: test_role
+    include_role:
+      name: "{{ osp_role }}"
+    loop:
+      - openstack_test_role
+      - openstack_control_node_setup  
+        # - openstack_manage_flavors  
+      - openstack_manage_images
+    loop_control:
+      loop_var: osp_role

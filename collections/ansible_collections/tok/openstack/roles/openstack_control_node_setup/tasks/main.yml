@@ -1,0 +1,47 @@
+---
+
+- name: Control Node privileged configuration
+  block:
+
+    - name: Install pre-requisite yum packages
+      package:
+        name: "{{ _yum_packages }}"
+        state: latest
+      tags:
+        - install-yum-packages
+
+    - name: Install openstacksdk and ansible via pip
+      pip:
+        name: "{{ _pip_packages }}"
+        state: latest
+        extra_args: -U
+      tags:
+        - install-pip-packages
+
+    - name: Configure /etc/openstack/clouds.yml
+      block:
+
+        - name: Copy clouds.yaml
+          template:
+            src: clouds.yaml.j2
+            dest: /etc/openstack/clouds.yaml
+
+#        - name: Create /etc/openstack directory
+#          file: 
+#            path: /etc/openstack
+#            state: directory
+#
+#        - name: Copy clouds.yaml
+#          copy:
+#            src: clouds.yaml
+#            dest: /etc/openstack/clouds.yaml
+      tags:  
+        - setup-clouds-yaml
+
+    - name: Setup cloud-user key    
+      authorized_key: 
+        user: cloud-user
+        key: "{{ lookup('url', 'http://www.opentlc.com/download/ansible_bootcamp/openstack_keys/openstack.pub') }}"
+
+  become: true
+...

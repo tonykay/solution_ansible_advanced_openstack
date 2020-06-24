@@ -1,0 +1,5 @@
+---
+
+- name: Just a test role debug task
+  debug:
+    msg: Hello from test_role in the tok.openstack collection

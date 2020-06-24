@@ -1,0 +1,10 @@
+---
+yum_packages:
+  - git
+  - python3
+  #- python-pip 
+
+pip_packages:
+  - ansible
+  #  - openstacksdk
+...

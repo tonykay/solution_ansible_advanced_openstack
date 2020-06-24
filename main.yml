@@ -1,0 +1,12 @@
+---
+- name: Start working with OpenStack
+  hosts: localhost
+  gather_facts: false
+  collections:
+    - tok.openstack
+
+  tasks:
+
+  - name: Call the test role
+    import_role:
+      name: test_role

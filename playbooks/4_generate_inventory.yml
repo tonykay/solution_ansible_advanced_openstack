@@ -1,0 +1,11 @@
+---
+- name: Generate openstack in-memory inventory
+  hosts: jumpbox
+  gather_facts: false
+  tags:
+    - stage4
+    - inventory
+
+  roles:
+    - name: osp-inventory
+...

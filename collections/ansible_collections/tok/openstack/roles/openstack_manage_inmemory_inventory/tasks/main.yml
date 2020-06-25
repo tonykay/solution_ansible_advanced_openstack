@@ -1,3 +1,5 @@
+---
+
 - name: Generate inmemory inventory
   block:
 
@@ -5,15 +7,17 @@
       os_server_info:
         cloud: "{{ openstack_cloud | default('openstack') }}"
         region_name: "{{ openstack_region | default('regionOne') }}"
-      register: result
+      register: r_instances
 
-    - name: Add host
+    - name: Add host(s) to inventory
       add_host:
-        name: "{{ item.public_v4 }}"
+        name: "{{ __instance.public_v4 }}"
         group: 
-          - "{{ item.metadata.group }}"
-          - "{{ item.metadata.deployment_name }}"
-      loop: "{{ result.openstack_servers }}"
+          - "{{ __instance.metadata.group }}"
+          - "{{ __instance.metadata.deployment_name }}"
+      loop: "{{ r_instances.openstack_servers }}"
+      loop_control:
+        loop_var: __instance
 
 
     - name: Output the in-memory inventory
@@ -22,9 +26,11 @@
       - name: Print hosts to STDOUT
         debug:
           msg:
-            - "name: {{ item.public_v4 }}"
-            - "group: {{ item.metadata.group }}"
-        loop: "{{ result.openstack_servers }}"
+            - "name: {{ __instance.public_v4 }}"
+            - "group: {{ __instance.metadata.group }}"
+        loop: "{{ r_instances.openstack_servers }}"
+        loop_control:
+          loop_var: __instance
 
       - name: Generate lab static inventory file
         template:

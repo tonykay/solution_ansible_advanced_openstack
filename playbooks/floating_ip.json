@@ -1,0 +1,450 @@
+{
+    "changed": true,
+    "msg": "All items completed",
+    "results": [
+        {
+            "_ansible_ignore_errors": null,
+            "_ansible_item_label": {
+                "_ansible_ignore_errors": null,
+                "_ansible_item_label": {
+                    "deployment": "dev",
+                    "group": "apps",
+                    "instance_name": "app1",
+                    "security_group_name": "apps"
+                },
+                "_ansible_item_result": true,
+                "_ansible_no_log": false,
+                "_ansible_parsed": true,
+                "ansible_job_id": "30903953784.3923",
+                "changed": true,
+                "failed": false,
+                "finished": 0,
+                "item": {
+                    "deployment": "dev",
+                    "group": "apps",
+                    "instance_name": "app1",
+                    "security_group_name": "apps"
+                },
+                "results_file": "/home/ankay-redhat.com/.ansible_async/30903953784.3923",
+                "started": 1
+            },
+            "_ansible_item_result": true,
+            "_ansible_no_log": false,
+            "_ansible_parsed": true,
+            "changed": true,
+            "failed": false,
+            "floating_ip": {
+                "attached": true,
+                "created_at": "2019-04-04T04:01:52Z",
+                "description": "",
+                "fixed_ip_address": "20.20.20.7",
+                "floating_ip_address": "10.10.10.11",
+                "floating_network_id": "65fea739-5dc4-463c-85ea-47318ef6bc46",
+                "id": "fb5970e0-640f-43b9-846b-3fb2fdad402d",
+                "location": {
+                    "cloud": "ospcloud",
+                    "project": {
+                        "domain_id": null,
+                        "domain_name": null,
+                        "id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                        "name": "admin"
+                    },
+                    "region_name": "RegionOne",
+                    "zone": null
+                },
+                "network": "65fea739-5dc4-463c-85ea-47318ef6bc46",
+                "port": "90cf346c-7f2c-4022-b645-21ff092dd48d",
+                "port_id": "90cf346c-7f2c-4022-b645-21ff092dd48d",
+                "project_id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                "properties": {},
+                "revision_number": 2,
+                "router": "72f2d810-47be-44bd-8127-b1400c11ca93",
+                "router_id": "72f2d810-47be-44bd-8127-b1400c11ca93",
+                "status": "DOWN",
+                "tenant_id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                "updated_at": "2019-04-04T04:01:52Z"
+            },
+            "invocation": {
+                "module_args": {
+                    "api_timeout": null,
+                    "auth": null,
+                    "auth_type": null,
+                    "availability_zone": null,
+                    "cacert": null,
+                    "cert": null,
+                    "fixed_address": null,
+                    "floating_ip_address": null,
+                    "interface": "public",
+                    "key": null,
+                    "nat_destination": null,
+                    "network": "ext_network",
+                    "purge": false,
+                    "region_name": null,
+                    "reuse": true,
+                    "server": "app1",
+                    "state": "present",
+                    "timeout": 180,
+                    "verify": null,
+                    "wait": true
+                }
+            },
+            "item": {
+                "_ansible_ignore_errors": null,
+                "_ansible_item_label": {
+                    "deployment": "dev",
+                    "group": "apps",
+                    "instance_name": "app1",
+                    "security_group_name": "apps"
+                },
+                "_ansible_item_result": true,
+                "_ansible_no_log": false,
+                "_ansible_parsed": true,
+                "ansible_job_id": "30903953784.3923",
+                "changed": true,
+                "failed": false,
+                "finished": 0,
+                "item": {
+                    "deployment": "dev",
+                    "group": "apps",
+                    "instance_name": "app1",
+                    "security_group_name": "apps"
+                },
+                "results_file": "/home/ankay-redhat.com/.ansible_async/30903953784.3923",
+                "started": 1
+            }
+        },
+        {
+            "_ansible_ignore_errors": null,
+            "_ansible_item_label": {
+                "_ansible_ignore_errors": null,
+                "_ansible_item_label": {
+                    "deployment": "dev",
+                    "group": "apps",
+                    "instance_name": "app2",
+                    "security_group_name": "apps"
+                },
+                "_ansible_item_result": true,
+                "_ansible_no_log": false,
+                "_ansible_parsed": true,
+                "ansible_job_id": "481310074510.4004",
+                "changed": true,
+                "failed": false,
+                "finished": 0,
+                "item": {
+                    "deployment": "dev",
+                    "group": "apps",
+                    "instance_name": "app2",
+                    "security_group_name": "apps"
+                },
+                "results_file": "/home/ankay-redhat.com/.ansible_async/481310074510.4004",
+                "started": 1
+            },
+            "_ansible_item_result": true,
+            "_ansible_no_log": false,
+            "_ansible_parsed": true,
+            "changed": true,
+            "failed": false,
+            "floating_ip": {
+                "attached": true,
+                "created_at": "2019-04-04T04:01:57Z",
+                "description": "",
+                "fixed_ip_address": "20.20.20.4",
+                "floating_ip_address": "10.10.10.12",
+                "floating_network_id": "65fea739-5dc4-463c-85ea-47318ef6bc46",
+                "id": "3c355292-2eaa-4f3a-a067-458ebf911be4",
+                "location": {
+                    "cloud": "ospcloud",
+                    "project": {
+                        "domain_id": null,
+                        "domain_name": null,
+                        "id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                        "name": "admin"
+                    },
+                    "region_name": "RegionOne",
+                    "zone": null
+                },
+                "network": "65fea739-5dc4-463c-85ea-47318ef6bc46",
+                "port": "0a26921e-548a-4d80-84d4-cb53a75e0fa8",
+                "port_id": "0a26921e-548a-4d80-84d4-cb53a75e0fa8",
+                "project_id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                "properties": {},
+                "revision_number": 2,
+                "router": "72f2d810-47be-44bd-8127-b1400c11ca93",
+                "router_id": "72f2d810-47be-44bd-8127-b1400c11ca93",
+                "status": "ACTIVE",
+                "tenant_id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                "updated_at": "2019-04-04T04:01:57Z"
+            },
+            "invocation": {
+                "module_args": {
+                    "api_timeout": null,
+                    "auth": null,
+                    "auth_type": null,
+                    "availability_zone": null,
+                    "cacert": null,
+                    "cert": null,
+                    "fixed_address": null,
+                    "floating_ip_address": null,
+                    "interface": "public",
+                    "key": null,
+                    "nat_destination": null,
+                    "network": "ext_network",
+                    "purge": false,
+                    "region_name": null,
+                    "reuse": true,
+                    "server": "app2",
+                    "state": "present",
+                    "timeout": 180,
+                    "verify": null,
+                    "wait": true
+                }
+            },
+            "item": {
+                "_ansible_ignore_errors": null,
+                "_ansible_item_label": {
+                    "deployment": "dev",
+                    "group": "apps",
+                    "instance_name": "app2",
+                    "security_group_name": "apps"
+                },
+                "_ansible_item_result": true,
+                "_ansible_no_log": false,
+                "_ansible_parsed": true,
+                "ansible_job_id": "481310074510.4004",
+                "changed": true,
+                "failed": false,
+                "finished": 0,
+                "item": {
+                    "deployment": "dev",
+                    "group": "apps",
+                    "instance_name": "app2",
+                    "security_group_name": "apps"
+                },
+                "results_file": "/home/ankay-redhat.com/.ansible_async/481310074510.4004",
+                "started": 1
+            }
+        },
+        {
+            "_ansible_ignore_errors": null,
+            "_ansible_item_label": {
+                "_ansible_ignore_errors": null,
+                "_ansible_item_label": {
+                    "deployment": "dev",
+                    "group": "appdbs",
+                    "instance_name": "db",
+                    "security_group_name": "db"
+                },
+                "_ansible_item_result": true,
+                "_ansible_no_log": false,
+                "_ansible_parsed": true,
+                "ansible_job_id": "953888763098.4085",
+                "changed": true,
+                "failed": false,
+                "finished": 0,
+                "item": {
+                    "deployment": "dev",
+                    "group": "appdbs",
+                    "instance_name": "db",
+                    "security_group_name": "db"
+                },
+                "results_file": "/home/ankay-redhat.com/.ansible_async/953888763098.4085",
+                "started": 1
+            },
+            "_ansible_item_result": true,
+            "_ansible_no_log": false,
+            "_ansible_parsed": true,
+            "changed": true,
+            "failed": false,
+            "floating_ip": {
+                "attached": true,
+                "created_at": "2019-04-04T04:02:01Z",
+                "description": "",
+                "fixed_ip_address": "20.20.20.14",
+                "floating_ip_address": "10.10.10.7",
+                "floating_network_id": "65fea739-5dc4-463c-85ea-47318ef6bc46",
+                "id": "c660cfee-1e4b-4f99-9792-6b0a4583e198",
+                "location": {
+                    "cloud": "ospcloud",
+                    "project": {
+                        "domain_id": null,
+                        "domain_name": null,
+                        "id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                        "name": "admin"
+                    },
+                    "region_name": "RegionOne",
+                    "zone": null
+                },
+                "network": "65fea739-5dc4-463c-85ea-47318ef6bc46",
+                "port": "ac070087-16e9-4c75-ac9a-4f3ab0aca96d",
+                "port_id": "ac070087-16e9-4c75-ac9a-4f3ab0aca96d",
+                "project_id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                "properties": {},
+                "revision_number": 2,
+                "router": "72f2d810-47be-44bd-8127-b1400c11ca93",
+                "router_id": "72f2d810-47be-44bd-8127-b1400c11ca93",
+                "status": "DOWN",
+                "tenant_id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                "updated_at": "2019-04-04T04:02:01Z"
+            },
+            "invocation": {
+                "module_args": {
+                    "api_timeout": null,
+                    "auth": null,
+                    "auth_type": null,
+                    "availability_zone": null,
+                    "cacert": null,
+                    "cert": null,
+                    "fixed_address": null,
+                    "floating_ip_address": null,
+                    "interface": "public",
+                    "key": null,
+                    "nat_destination": null,
+                    "network": "ext_network",
+                    "purge": false,
+                    "region_name": null,
+                    "reuse": true,
+                    "server": "db",
+                    "state": "present",
+                    "timeout": 180,
+                    "verify": null,
+                    "wait": true
+                }
+            },
+            "item": {
+                "_ansible_ignore_errors": null,
+                "_ansible_item_label": {
+                    "deployment": "dev",
+                    "group": "appdbs",
+                    "instance_name": "db",
+                    "security_group_name": "db"
+                },
+                "_ansible_item_result": true,
+                "_ansible_no_log": false,
+                "_ansible_parsed": true,
+                "ansible_job_id": "953888763098.4085",
+                "changed": true,
+                "failed": false,
+                "finished": 0,
+                "item": {
+                    "deployment": "dev",
+                    "group": "appdbs",
+                    "instance_name": "db",
+                    "security_group_name": "db"
+                },
+                "results_file": "/home/ankay-redhat.com/.ansible_async/953888763098.4085",
+                "started": 1
+            }
+        },
+        {
+            "_ansible_ignore_errors": null,
+            "_ansible_item_label": {
+                "_ansible_ignore_errors": null,
+                "_ansible_item_label": {
+                    "deployment": "dev",
+                    "group": "frontends",
+                    "instance_name": "frontend",
+                    "security_group_name": "frontend"
+                },
+                "_ansible_item_result": true,
+                "_ansible_no_log": false,
+                "_ansible_parsed": true,
+                "ansible_job_id": "112855895404.4166",
+                "changed": true,
+                "failed": false,
+                "finished": 0,
+                "item": {
+                    "deployment": "dev",
+                    "group": "frontends",
+                    "instance_name": "frontend",
+                    "security_group_name": "frontend"
+                },
+                "results_file": "/home/ankay-redhat.com/.ansible_async/112855895404.4166",
+                "started": 1
+            },
+            "_ansible_item_result": true,
+            "_ansible_no_log": false,
+            "_ansible_parsed": true,
+            "changed": true,
+            "failed": false,
+            "floating_ip": {
+                "attached": true,
+                "created_at": "2019-04-04T04:02:05Z",
+                "description": "",
+                "fixed_ip_address": "20.20.20.12",
+                "floating_ip_address": "10.10.10.6",
+                "floating_network_id": "65fea739-5dc4-463c-85ea-47318ef6bc46",
+                "id": "343659b6-4283-4aba-ba47-448c7c699d4d",
+                "location": {
+                    "cloud": "ospcloud",
+                    "project": {
+                        "domain_id": null,
+                        "domain_name": null,
+                        "id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                        "name": "admin"
+                    },
+                    "region_name": "RegionOne",
+                    "zone": null
+                },
+                "network": "65fea739-5dc4-463c-85ea-47318ef6bc46",
+                "port": "8c74b5c6-5ee3-44b9-bfc9-826987d08d7d",
+                "port_id": "8c74b5c6-5ee3-44b9-bfc9-826987d08d7d",
+                "project_id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                "properties": {},
+                "revision_number": 2,
+                "router": "72f2d810-47be-44bd-8127-b1400c11ca93",
+                "router_id": "72f2d810-47be-44bd-8127-b1400c11ca93",
+                "status": "ACTIVE",
+                "tenant_id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                "updated_at": "2019-04-04T04:02:05Z"
+            },
+            "invocation": {
+                "module_args": {
+                    "api_timeout": null,
+                    "auth": null,
+                    "auth_type": null,
+                    "availability_zone": null,
+                    "cacert": null,
+                    "cert": null,
+                    "fixed_address": null,
+                    "floating_ip_address": null,
+                    "interface": "public",
+                    "key": null,
+                    "nat_destination": null,
+                    "network": "ext_network",
+                    "purge": false,
+                    "region_name": null,
+                    "reuse": true,
+                    "server": "frontend",
+                    "state": "present",
+                    "timeout": 180,
+                    "verify": null,
+                    "wait": true
+                }
+            },
+            "item": {
+                "_ansible_ignore_errors": null,
+                "_ansible_item_label": {
+                    "deployment": "dev",
+                    "group": "frontends",
+                    "instance_name": "frontend",
+                    "security_group_name": "frontend"
+                },
+                "_ansible_item_result": true,
+                "_ansible_no_log": false,
+                "_ansible_parsed": true,
+                "ansible_job_id": "112855895404.4166",
+                "changed": true,
+                "failed": false,
+                "finished": 0,
+                "item": {
+                    "deployment": "dev",
+                    "group": "frontends",
+                    "instance_name": "frontend",
+                    "security_group_name": "frontend"
+                },
+                "results_file": "/home/ankay-redhat.com/.ansible_async/112855895404.4166",
+                "started": 1
+            }
+        }
+    ]
+}

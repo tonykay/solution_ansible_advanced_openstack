@@ -18,3 +18,10 @@ openstack_images:
     disk_format: qcow2
     filename: /tmp/rhel.qcow2
 
+
+openstack_keypair:
+
+  name: ansible_ssh
+  cloud: "{{ openstack_cloud }}"
+  state: present
+  public_key_file: "{{ ansible_env.HOME }}/.ssh/test_id_rsa.pub"

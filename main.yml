@@ -1,19 +1,15 @@
 ---
-- name: Start working with OpenStack
+- name: OpenStack end to end configuration
   hosts: control
-  gather_facts: false
+  gather_facts: true
   collections:
     - tok.openstack
 
-  tasks:
+  roles:
+    - openstack_test_role
+    - openstack_control_node_setup  
+    - openstack_manage_flavors  
+    - openstack_manage_images
+    - openstack_manage_keypair
 
-  - name: Call the test role
-    include_role:
-      name: "{{ osp_role }}"
-    loop:
-      - openstack_test_role
-      - openstack_control_node_setup  
-        # - openstack_manage_flavors  
-      - openstack_manage_images
-    loop_control:
-      loop_var: osp_role
+...

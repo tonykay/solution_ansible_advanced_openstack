@@ -1,0 +1,5 @@
+---
+
+- name: Validate OpenStack Control Node can authenticate
+  os_auth:
+    cloud: "{{ openstack_cloud | default('openstack') }}"

@@ -11,5 +11,6 @@
     - openstack_manage_flavors  
     - openstack_manage_images
     - openstack_manage_keypair
+    - openstack_manage_networks
 
 ...

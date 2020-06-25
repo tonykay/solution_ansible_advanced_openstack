@@ -1,0 +1,7 @@
+---
+
+- import_playbook: utilities/fetch-assets.yml
+- import_playbook: deploy-openstack-three-tier-infra.yml
+- import_playbook: deploy-three-tier-app.yml
+
+...

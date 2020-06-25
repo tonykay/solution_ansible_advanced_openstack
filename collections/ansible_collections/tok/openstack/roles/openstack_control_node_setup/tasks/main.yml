@@ -18,6 +18,11 @@
       tags:
         - install-pip-packages
 
+    - name: Create /etc/openstack directory
+      file:
+        path: /etc/openstack
+        state: directory
+
     - name: Generate clouds.yaml from template
       template:
         src: clouds.yaml.j2

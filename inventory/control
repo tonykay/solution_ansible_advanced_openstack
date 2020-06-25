@@ -1,2 +1,8 @@
 [control_node]
 control 
+
+#ansible_host=workstation-"{{ GUID }}".blue.osp.opentlc.com
+#
+#[control_node:vars]
+#GUID="{{ lookup('env', 'GUID') }}"
+

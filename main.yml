@@ -14,5 +14,6 @@
     - openstack_manage_networks
     - openstack_manage_security_groups
     - openstack_manage_instances
+    - openstack_manage_inmemory_inventory
 
 ...

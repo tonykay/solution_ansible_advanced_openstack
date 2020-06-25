@@ -64,3 +64,5 @@ openstack_routers:
     name: router
     network: ext_network
     interfaces: int_subnet
+
+openstack_security_groups: []    

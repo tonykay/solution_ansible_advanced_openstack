@@ -12,5 +12,7 @@
     - openstack_manage_images
     - openstack_manage_keypair
     - openstack_manage_networks
+    - openstack_manage_security_groups
+    - openstack_manage_instances
 
 ...

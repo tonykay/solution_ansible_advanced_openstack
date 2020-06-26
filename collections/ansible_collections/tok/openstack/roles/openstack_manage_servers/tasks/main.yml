@@ -1,24 +1,22 @@
 - name: Create server instances
   os_server:
-    cloud: openstack
-    state: "{{ osp_server_state | default(osp_state) | default('present') }}"
-    name: "{{ item.instance_name }}"
-    image: rhel-guest
+    cloud:            "{{ openstack_cloud       | default('openstack') }}"
+    name:             "{{ item.instance_name }}"
+    state:            "{{ item.state            | default('present') }}"
+    image:            "{{ item.image            | default('rhel-guest') }}"
+    flavor:           "{{ item.flavor           | default('m1.medium') }}"
+    key_name:         "{{ item.key_name         | default('ansible_ssh') }}"
+    wait:             "{{ item.wait             | default('yes') }}"
+    security_groups:  "{{ item.security_group_name }}"
     meta: "group={{ item.group }},deployment_name={{ item.deployment }}"
-    flavor: m1.medium
-    security_groups: "{{ item.security_group_name }}"
-    key_name: ansible_ssh
-    wait: yes
     nics:
-    - net-name: int_network
+      - net-name: int_network
       #    - net-name: ext_network
     userdata: |
       #!/bin/bash
       curl -o /tmp/openstack.pub http://www.opentlc.com/download/ansible_bootcamp/openstack_keys/openstack.pub
       cat /tmp/openstack.pub >> /home/cloud-user/.ssh/authorized_keys
-      curl -o /tmp/internal.repo http://www.opentlc.com/download/ansible_bootcamp/repo/internal.repo
-      cp /tmp/internal.repo /etc/yum.repos.d/internal.repo
-  loop: "{{ openstack_instances }}"      
+  loop: "{{ openstack_servers }}"      
   async: 900
   poll: 0
   register: r_instances

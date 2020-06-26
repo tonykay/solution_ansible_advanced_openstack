@@ -1,0 +1,14 @@
+== Overview
+
+A monolithic repo (openstack collection, three tier app roles etc) to deploy end to end openstack three-tier-app.
+
+
+=== Notes
+
+* defaults to run from remote control node 
+** To run locally on workstation just change inventory so it is localhost
+
+
+deploy-all.yml
+deploy-openstack-three-tier-infra.yml
+deploy-three-tier-app.yml

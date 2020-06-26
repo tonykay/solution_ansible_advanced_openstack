@@ -1,6 +1,15 @@
 openstack_cloud: openstack
 
+_server_image: rhel-guest
+
 openstack_flavors:
+
+  - name: m1.small
+    cloud: "{{ openstack_cloud }}"
+    state: present
+    vcpus: 1
+    ram: 1024
+    disk: 20
 
   - name: m1.medium
     cloud: "{{ openstack_cloud }}"
@@ -26,15 +35,15 @@ openstack_keypair:
   public_key_file: "{{ ansible_env.HOME }}/.ssh/test_id_rsa.pub"
 
 openstack_networks:
-  # Public Facing Network   
+
   external:
-    cloud_name: openstack
+    cloud_name: "{{ openstack_cloud }}"
     network_name: ext_network
+    state: present
     provider_network_type: flat
     provider_physical_network: datacentre
     subnet_name: ext_subnet
     cidr_network: "192.0.2.0/24"
-    state: present
     external: true
     gateway_ip: 192.0.2.254
     admin_state: yes
@@ -43,8 +52,6 @@ openstack_networks:
     allocation_pool_start: 192.0.2.150
     allocation_pool_end: 192.0.2.200
 
-
-  # Private Facing Network   
   internal:
     cloud_name: openstack
     network_name: int_network
@@ -55,7 +62,6 @@ openstack_networks:
     admin_state: yes
     ip_version: 4
     enable_dhcp: yes
-
   # Public Facing Router connecting the two networks
 openstack_routers:
   router:
@@ -66,3 +72,30 @@ openstack_routers:
     interfaces: int_subnet
 
 openstack_security_groups: []    
+
+openstack_servers:
+
+  - instance_name: app1
+    group: apps
+    deployment: dev
+    security_group_name: apps
+    image: "{{ _server_image | default('rhel-guest') }}"
+
+  - instance_name: app2
+    group: apps
+    deployment: dev
+    security_group_name: apps
+    image: "{{ _server_image | default('rhel-guest') }}"
+
+  - instance_name: db
+    group: appdbs
+    deployment: dev
+    security_group_name: db
+    image: "{{ _server_image | default('rhel-guest') }}"
+
+  - instance_name: frontend
+    group: frontends
+    deployment: dev
+    security_group_name: frontend
+    image: "{{ _server_image | default('rhel-guest') }}"
+...

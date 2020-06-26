@@ -1,7 +1,8 @@
 ---
 - name: OpenStack end to end configuration
   hosts: control
-  gather_facts: true
+  gather_facts: false
+  become: false
   collections:
     - tok.openstack
 

@@ -8,7 +8,14 @@ A monolithic repo (openstack collection, three tier app roles etc) to deploy end
 * defaults to run from remote control node 
 ** To run locally on workstation just change inventory so it is localhost
 
+NOTE: There is an ansible vault and the password is the common redhat password...
 
-deploy-all.yml
-deploy-openstack-three-tier-infra.yml
-deploy-three-tier-app.yml
+`ansible-playbook deploy-all.yml --ask-vault-pass`
+
+=== Three playbooks
+
+* `deploy-all.yml`
+** Full deploy from zero to running app
+* `deploy-openstack-three-tier-infra.yml`
+** Builds Infrastructure including instances but no app
+* `deploy-three-tier-app.yml` Requires existing infra (previous play), generates inventory, deploys app

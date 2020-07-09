@@ -1,5 +1,5 @@
 [control_node]
-control 
+control ansible_host=localhost ansible_connection=local
 
 #ansible_host=workstation-"{{ GUID }}".blue.osp.opentlc.com
 #

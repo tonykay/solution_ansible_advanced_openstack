@@ -6,6 +6,7 @@
     - tok.openstack
 
   roles:
+
     - openstack_test_role
     - openstack_control_node_setup  
     - openstack_manage_flavors  

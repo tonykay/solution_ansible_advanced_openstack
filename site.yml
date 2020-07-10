@@ -1,0 +1,21 @@
+---
+
+- name: OpenStack end to end configuration
+  hosts: control
+  gather_facts: false
+  become: false
+  collections:
+    - tok.openstack
+
+  roles:
+
+    - openstack_manage_inmemory_inventory
+
+
+- import_playbook: common.yml
+  tags:
+    - common
+- import_playbook: frontend_tier.yml
+- import_playbook: database_tier.yml
+- import_playbook: app_tier.yml
+# - import_playbook: playbooks/smoketest.yml

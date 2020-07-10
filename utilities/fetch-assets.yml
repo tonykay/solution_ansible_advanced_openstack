@@ -3,10 +3,13 @@
   hosts: control
   gather_facts: false
   become: false
+  vars:
+    image_download_url: http://www.opentlc.com/download/ansible_bootcamp/rhel-server-7.6-update-5-x86_64-kvm.qcow2
+      #  url: http://www.opentlc.com/download/osp_advanced_networking/rhel-guest-image-7.2-20151102.0.x86_64.qcow2
 
   tasks:
 
     - name: Download RHEL image
       get_url:
-        url: http://www.opentlc.com/download/osp_advanced_networking/rhel-guest-image-7.2-20151102.0.x86_64.qcow2
+        url: "{{ image_download_url }}"
         dest: /tmp/rhel.qcow2

@@ -76,25 +76,25 @@ openstack_security_groups: []
 openstack_servers:
 
   - instance_name: app1
-    group: apps
+    group: app_servers
     deployment: dev
     security_group_name: apps
     image: "{{ _server_image | default('rhel-guest') }}"
 
   - instance_name: app2
-    group: apps
+    group: app_servers
     deployment: dev
     security_group_name: apps
     image: "{{ _server_image | default('rhel-guest') }}"
 
-  - instance_name: db
-    group: appdbs
+  - instance_name: appdb1
+    group: database_servers
     deployment: dev
     security_group_name: db
     image: "{{ _server_image | default('rhel-guest') }}"
 
-  - instance_name: frontend
-    group: frontends
+  - instance_name: frontend1
+    group: load_balancers
     deployment: dev
     security_group_name: frontend
     image: "{{ _server_image | default('rhel-guest') }}"

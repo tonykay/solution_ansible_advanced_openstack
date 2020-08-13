@@ -1,21 +1,9 @@
 ---
 - name: OpenStack end to end configuration
   hosts: control
-  gather_facts: true
-  collections:
-    - tok.openstack
+  gather_facts: false
+  become: false
 
-  roles:
-
-    - openstack_test_role
-    - openstack_control_node_setup  
-    - openstack_manage_flavors  
-    - openstack_manage_images
-    - openstack_manage_keypair
-    - openstack_manage_networks
-    - openstack_manage_security_groups
-    - openstack_manage_servers
-#    - openstack_manage_inmemory_inventory
   tasks:
 
     - name: Fetch Instance Info
@@ -32,6 +20,17 @@
           - "{{ item.metadata.deployment_name }}"
       loop: "{{ r_os_servers.openstack_servers }}"
 
-- import_playbook: site.yml
+- name: Setup Repos
+  hosts: load_balancers:database_servers
+  gather_facts: false
+  become: true
+  tags:
+    - common
 
-...
+  tasks:
+
+    - name: Copy repo file
+      copy:
+        src: ../files/open_three-tier-app.repo
+        dest: /etc/yum.repos.d/open_three-tier-app.repo
+
